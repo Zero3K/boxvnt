@@ -71,18 +71,23 @@ VIDEOMP_MODE    VideoModes[] = {
     MODE_RES( 1280,  720 ),
     MODE_RES( 1280,  800 ),
     MODE_RES( 1280,  960 ),
+    MODE_RES( 1280, 1024 ),
     MODE_RES( 1360,  768 ),
     MODE_RES( 1360, 1024 ),
     MODE_RES( 1366,  768 ),
     MODE_RES( 1400, 1050 ),
     MODE_RES( 1440,  900 ),
+    MODE_RES( 1536, 1024 ),
     MODE_RES( 1600, 1200 ),
     MODE_RES( 1680, 1050 ),
     MODE_RES( 1920, 1080 ),
     MODE_RES( 1920, 1200 ),
     MODE_RES( 2048, 1152 ),
     MODE_RES( 2048, 1536 ),
-    MODE_RES( 2560, 1600 )
+    MODE_RES( 2560, 1600 ),
+    MODE_RES( 3840, 2160 ),
+    MODE_RES( 4096, 2304 ),
+    MODE_RES( 5120, 2880 )
 };
 
 ULONG   ulAllModes = sizeof( VideoModes ) / sizeof( VideoModes[0] );

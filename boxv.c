@@ -1,6 +1,6 @@
 /*****************************************************************************
 
-Copyright (c) 2012  Michal Necasek
+Copyright (c) 2012-2017  Michal Necasek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -324,7 +324,8 @@ int BOXV_ext_mode_set( void *cx, int xres, int yres, int bpp, int v_xres, int v_
     /* Re-enable the sequencer. */
     vid_wridx( cx, VGA_SEQUENCER, VGA_SR_RESET, VGA_SR0_NORESET );
 
-    /* Re-enable palette. */
+    /* Reset flip-flop again and re-enable palette. */
+    vid_inb( cx, VGA_STAT_ADDR );
     vid_outb( cx, VGA_ATTR_W, 0x20 );
 
     return( 0 );
