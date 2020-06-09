@@ -1,8 +1,8 @@
 
- Windows NT Video Miniport Programming Example
+ boxvnt (Virtualbox/QEMU/Bochs SVGA Driver)
  ---------------------------------------------
 
- The sample video miniport supports the virtual SVGA chip supported by the
+ boxvnt supports the virtual SVGA chip supported by the
 VirtualBox hypervisor. It may also work with bochs and qemu, but this has not
 been tested; small changes may be required.
 
@@ -41,9 +41,7 @@ is already preinstalled on the system.
 
  Building
 
- The miniport is designed to be built with Open Watcom C/C++ 1.9 or later.
-Windows has been tested as a build host, but it is likely that other host
-platforms can be used with minor changes.
+ The miniport is designed to be built with Open Watcom C/C++ 1.9 or later by running wmake in the source's directory. Windows has been tested as a build host, but it is likely that other host platforms can be used with minor changes. 
 
 
  Licensing
