@@ -1,8 +1,8 @@
 
- boxvnt (Virtualbox/QEMU/Bochs SVGA Driver)
+ BoxVNT (VirtualBox/QEMU/Bochs SVGA Driver)
  ---------------------------------------------
 
- boxvnt supports the virtual SVGA chip supported by the
+ BoxVNT supports the virtual SVGA chip supported by the
 VirtualBox hypervisor. It may also work with bochs and qemu, but this has not
 been tested; small changes may be required.
 
