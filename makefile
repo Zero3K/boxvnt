@@ -11,7 +11,7 @@ LIBS = $(%WATCOM)/lib386/nt/ddk
 
 CFLAGS += -d1 -hc
 
-OBJS = videomp.obj vidmpdat.obj boxv.obj
+OBJS = videomp.obj vidmpdat.obj boxv.obj boxv_io.obj
 
 .c.obj : .autodepend
     $(CC) $(CFLAGS) $(INCS) $<

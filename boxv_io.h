@@ -1,6 +1,6 @@
 /*****************************************************************************
 
-Copyright (c) 2012  Michal Necasek
+Copyright (c) 2012-2022  Michal Necasek
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,40 +28,12 @@ THE SOFTWARE.
 #include "videomp.h"
 
 /* In this case, vid_in/out cannot be defined as macros because NT uses
- * a pretty funky interface for I/O port access.
+ * a pretty funky interface for I/O port access. Actual functions are defined
+ * in a separate module.
  */
 
-static void vid_outb( void *cx, unsigned port, unsigned val )
-{
-    PHW_DEV_EXT     pExt = cx;
-
-    VideoPortWritePortUchar( pExt->IOAddrVGA + port, val );
-}
-
-static void vid_outw( void *cx, unsigned port, unsigned val )
-{
-    PHW_DEV_EXT     pExt = cx;
-
-    VideoPortWritePortUshort( (PUSHORT)(pExt->IOAddrVGA + port), val );
-}
-
-static unsigned vid_inb( void *cx, unsigned port )
-{
-    PHW_DEV_EXT     pExt = cx;
-
-    return( VideoPortReadPortUchar( pExt->IOAddrVGA + port ) );
-}
-
-static unsigned vid_inw( void *cx, unsigned port )
-{
-    PHW_DEV_EXT     pExt = cx;
-
-    return( VideoPortReadPortUshort( (PUSHORT)(pExt->IOAddrVGA + port) ) );
-}
-
-static unsigned vid_ind( void *cx, unsigned port )
-{
-    PHW_DEV_EXT     pExt = cx;
-
-    return( VideoPortReadPortUlong( (PULONG)(pExt->IOAddrVGA + port) ) );
-}
+extern void     vid_outb( void *cx, unsigned port, unsigned val );
+extern void     vid_outw( void *cx, unsigned port, unsigned val );
+extern unsigned vid_inb( void *cx, unsigned port );
+extern unsigned vid_inw( void *cx, unsigned port );
+extern unsigned vid_ind( void *cx, unsigned port );
