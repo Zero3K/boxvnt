@@ -1,22 +1,10 @@
 
- BoxVNT (VirtualBox/QEMU/Bochs SVGA Driver)
- ---------------------------------------------
+ Windows NT Video Miniport
+ -------------------------
 
- BoxVNT supports the virtual SVGA chip supported by the
+ This video miniport driver supports the virtual (S)VGA chip supported by the
 VirtualBox hypervisor. It may also work with bochs and qemu, but this has not
-been tested; small changes may be required.
-
- The source code is split into two parts: The boxv module (boxv*) and the
-miniport proper (videomp*). The boxv module provides a simple collection of
-routines to set modes on the VirtualBox/qemu/bochs virtual SVGA chip. The
-vidmini module implements the Windows NT video miniport interface.
-
- The miniport only provides minimal mode setting and palette access interface
-since the virtual hardware does not support hardware cursors etc. All drawing
-is left to framebuf.dll, the default Windows NT framebuffer display driver.
-
- Please refer to the Windows NT DDK for documentation on the video miniport
-interface.
+been tested; small changes to the source code may be required.
 
 
  Supported Windows Versions
@@ -33,15 +21,33 @@ the Setup applet must be used. For all other versions, the display property
 dialog should be used. There are two versions of the INF file: oemsetup.inf
 for Windows NT 3.x and vidmini.inf for Windows NT 4 and later versions.
 
- Important: For Windows NT 3.x, the framebuf.dll library provided on the NT
+ IMPORTANT: For Windows NT 3.x, the framebuf.dll library provided on the NT
 installation media is required and should be copied to the directory which
 contains the INF file. For Windows NT 4.0 and later, framebuf.dll
 is already preinstalled on the system.
 
 
+ Implementation Overview
+
+ The source code is split into two parts: The boxv module (boxv*) and the
+miniport proper (videomp*). The boxv module provides a simple collection of
+routines to set arbitrary 8/16/24/32bpp modes on the VirtualBox/qemu/bochs
+virtual SVGA chip. The vidmini module implements the Windows NT video
+miniport interface.
+
+ The miniport only provides minimal mode setting and palette access interface
+since the virtual hardware does not support hardware cursors etc. All drawing
+is left to framebuf.dll, the default Windows NT framebuffer display driver.
+
+ Please refer to the Windows NT DDK for documentation on the video miniport
+interface.
+
+
  Building
 
- The miniport is designed to be built with Open Watcom C/C++ 1.9 or later by running wmake in the source's directory. Windows has been tested as a build host, but it is likely that other host platforms can be used with minor changes. 
+ The miniport is designed to be built with Open Watcom C/C++ 1.9 or later.
+Windows has been tested as a build host, but it is likely that other host
+platforms can be used with minor changes.
 
 
  Licensing
