@@ -45,9 +45,12 @@ interface.
 
  Building
 
- The miniport is designed to be built with Open Watcom C/C++ 1.9 or later.
-Windows has been tested as a build host, but it is likely that other host
-platforms can be used with minor changes.
+ The miniport can be built with:
+ - Open Watcom C/C++ 1.9 or later (original build system)
+ - Visual Studio 2019 with Windows Driver Kit (see BUILD_VS2019.md)
+ 
+ Windows has been tested as a build host, but it is likely that other host
+ platforms can be used with minor changes.
 
 
  Licensing
