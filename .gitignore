@@ -3,3 +3,24 @@
 *.map
 *.sym
 *.sys
+
+# Visual Studio build artifacts
+Debug/
+Release/
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.ipch
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.lib
+*.exe
+*.tlog
+*.log
+*.lastbuildstate
+*.unsuccessfulbuild

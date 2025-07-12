@@ -24,6 +24,11 @@ THE SOFTWARE.
 
 /* Internal definitions used by the boxv library. */
 
+/* Compiler compatibility */
+#ifdef _MSC_VER
+#define inline __inline
+#endif
+
 /*-------------- VGA Specific ----------------*/
 
 /* VGA I/O port addresses. */
